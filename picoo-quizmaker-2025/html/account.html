@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picoo.com</title>
+    <link rel="stylesheet" href="../css/account.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Picoo</a></li>
+          <li class="menu-item">
+            <a href="spellen.html">Spellen</a>
+            <ul class="dropdown">
+              <li>
+                <a href="spellen.html" class="drop-down">Picoo spellen</a>
+              </li>
+              <li><a href="#" class="drop-down">Pico passes</a></li>
+              <li>
+                <a href="../html/quiz-selector.html" class="drop-down"
+                  >Quizzen</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Voor wie</a></li>
+          <li><a href="../index.html">Inclusief spelen</a></li>
+          <li><a href="about.html">Klantenservice</a></li>
+          <li><a href="contact.html">Over ons</a></li>
+          <li><a href="../index.html">Nieuws</a></li>
+          <li><a href="about.html">Picoo op proef</a></li>
+          <a href="../index.html"
+            ><button class="shop-button">Shop Picoo</button></a
+          >
+          <a href="login.html"><button class="login-button">Login</button></a>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="account">
+      <div class="account-container">
+        <div class="account-header">
+          <h1>Account</h1>
+        </div>
+
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="pietje@gmail.com" readonly />
+
+          <label for="username">Gebruikersnaam</label>
+          <input type="text" id="username" value="pietje" readonly />
+
+          <label for="password">Wachtwoord</label>
+          <div class="password-container">
+            <input type="password" id="password" value="********" readonly />
+            <button type="button" class="toggle-password">
+              <img src="../images/eye-icon.png" alt="Toggle Password" />
+            </button>
+          </div>
+        </form>
+
+        <div class="profile-image-container">
+          <a href="../index.html">
+            <img
+              src="../images/profile.png"
+              alt="Profile"
+              class="profile-image"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Picoo.com. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

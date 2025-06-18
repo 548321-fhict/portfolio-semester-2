@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* General Styles */
+html, body {
+    font-family: Quicksand, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 76px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #292d78;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 15px;
+}
+
+.nav-list li a:hover {
+    color: rgb(30, 33, 85);
+    font-weight: 500;
+    border-bottom: 2px solid #00aeef;
+}
+
+/* Dropdown Menu Styles */
+.menu-item {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-wrap: nowrap;
+    
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown li a {
+    
+    display: block;
+    color: #292d78;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.dropdown li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    border-bottom: 0px solid #00aeef;
+}
+
+/* Shop Button Styles */
+.shop-button {
+    background-color: #84bf41;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 11px 25px;
+    cursor: pointer;
+}
+
+.shop-button:hover {
+    background-color: #94ca57;
+}
+
+.login-button {
+    background-color: #292d78;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 11px 25px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #3b3f8c;
+}
+
+/* Main Games Section */
+#quiz-selector {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  padding-top: 80px;
+}
+
+.picoo-quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* Header Section */
+.picoo-quiz-header {
+  background-color: #00ADEF; 
+  color: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.picoo-quiz-header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 40px;
+  margin-left: 20px;
+}
+
+.quiz-description {
+  font-family: 'quicksand', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.quiz-description p {
+  margin-bottom: 15px;
+}
+
+.quiz-description p strong {
+  font-size: 1.2em;
+  color: #003399;
+}
+
+.quiz-description p strong:first-child {
+  display: block;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.quiz-description p:last-child {
+  font-style: italic;
+  color: #555555;
+}
+
+.quiz-options {
+  background-color: #C8EAFB; 
+  color: #ffffff;
+  padding: 100px;
+  padding-bottom: 250px;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
+
+.quiz-options h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  color: #003399;
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+.quiz-cards {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.quiz-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 100px;
+  text-align: center;
+  width: 200px;
+}
+
+.quiz-card img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.quiz-card p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #003399;
+  margin: 0;
+}
+
+footer {
+    margin-top: 73%;
+  background-color: #f0f0f0; /* Optional: Add a background color */
+  text-align: center;
+  padding: 10px 0;
+  position: relative; /* Ensure it doesn't overlap content */
+  width: 100%;
+}

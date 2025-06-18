@@ -1,0 +1,1410 @@
+/* main body section*/
+@keyframes double-loop {
+  0%   { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+  margin: 0;
+  padding-top: 100px;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #2c2c2c, #2b2b2b), url('images/main-background.svg') no-repeat center center scroll;
+  background-size: cover; /* Ensure both the gradient and image cover the page */
+  color: #A9A9A9;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: 'DaggerSquare';
+  src: url('fonts/daggersquare.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* nav-bar section*/
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  background: linear-gradient(to right, #2c2c2c, #2b2b2b); 
+  padding: 30px 0;
+  font-family: 'DaggerSquare', sans-serif;
+  z-index: 1000; 
+}
+
+.nav-bar a {
+  position: relative;
+  color: #1a1a1a; /* Black text by default */
+  font-size: 40px;
+  z-index: 1;
+  overflow: hidden;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  transition: color 0.2s, background-position 0.2s cubic-bezier(.22,1,.36,1);
+  cursor: pointer;
+}
+
+.nav-bar a:hover {
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-bar a.active {
+  color: #111;
+  font-size: 46px;
+}
+
+#projecten {
+  scroll-margin-top: 150px; /* Adjust for fixed navbar */
+}
+
+#leeruitkomsten {
+  scroll-margin-top: 150px; /* Adjust for fixed navbar */
+}
+
+
+/* about section */
+.about {
+  top: 20px;
+  left: 60px;
+  padding: 6%;
+  font-family: 'Montserrat', sans-serif;
+  color: #A9A9A9;
+  max-width: 400px;
+}
+
+.about h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 18px;
+  color: #A9A9A9;
+  line-height: 1.6;
+}
+
+.about img {
+  width: 550%;
+  height: 100%;
+  margin-right: 20px;
+  margin-left: -105px;
+  margin-top: -272px;
+  position: relative; /* Ensure the image is positioned properly */
+  z-index: 1; /* Set a lower z-index for the image */
+}
+
+.projecten h2 {
+  font-size: 75px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a; /* Same color as the navbar links */
+  font-weight: 600; /* Match the navbar font weight */
+  text-align: center; /* Center the text */
+  position: absolute; /* Allow precise positioning */
+  top: 1350px; /* Adjust to move it vertically */
+  left: 75%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the text */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  letter-spacing: 5px;
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.projecten {
+  display: flex;
+  flex-wrap: wrap; /* Allow hexagons to wrap to the next row */
+  justify-content: center; /* Center the hexagons horizontally */
+  gap: 50px; /* Add spacing between hexagons */
+}
+
+.hexagon-container {
+  position: absolute; /* Position the hexagon container absolutely */
+  top: 50%; /* Adjust to position it vertically */
+  left: 50%; /* Adjust to position it horizontally */
+  transform: translate(-50%, -50%); /* Center the hexagon container */
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
+  z-index: 2; /* Ensure it appears above the image */
+}
+
+.hexagon {
+  width: 312%;
+  height: 270%;
+  background: #383838;
+  background: linear-gradient(30deg, rgb(47, 47, 47) 0%, rgb(107, 107, 107) 100%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2); /* Add shadows */
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #A9A9A9; /* Text color */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; /* Adjust font size as needed */
+  z-index: 3; /* Ensure it appears above the container */
+  cursor: pointer; /* Make it clickable */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover effect */
+}
+
+.hexagon-branding {
+  margin-top: 1176px;
+  margin-left: -399px;
+}
+
+.hexagon-UX {
+  margin-top: 1488px;
+  margin-left: 355px;
+  width: 21%;
+  height: 46%;
+}
+
+.hexagon-development {
+  margin-top: 1993px;
+  margin-left: -560px;
+  width: 17.6%;
+  height: 39.3%;
+}
+
+.hexagon-ProjectX {
+  margin-top: 2630px;
+  margin-left: 140px;
+  width: 17.6%;
+  height: 39.3%;
+}
+
+/* Default hover effect for all hexagons */
+.hexagon:hover {
+  transform: translate(-80px, 80px); /* Default movement */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4), 0 10px 10px rgba(0, 0, 0, 0.3); /* Default shadow */
+}
+
+/* UX hexagon hover effect */
+.hexagon-UX:hover .hexagon {
+  transform: translate(-120px, 70px); /* Move down and to the left */
+}
+
+/* Development hexagon hover effect */
+.hexagon-development:hover .hexagon {
+  transform: translate(-80px, 80px); /* Default movement */
+}
+
+/* ProjectX hexagon hover effect */
+.hexagon-ProjectX:hover .hexagon {
+ transform: translate(-80px, 80px);
+}
+
+
+.hexagon p {
+  margin: 0;
+  padding: 10px; /* Add padding for better spacing */
+  line-height: 1.4; /* Adjust line height for readability */
+  font-size: 60px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold */
+  max-width: 70%; /* Limit the width of the text */
+  transition: transform 0.7s ease;
+}
+
+.hexagon:hover p {
+  transform: translate(0px, -130px); /* Slightly enlarge text on hover */
+}
+
+.hexagon p.UX-subtext {
+  position: absolute;
+  top: 55%;
+  max-width: 400px;      /* Set your desired max width */
+  margin-left: auto;     /* Pushes the element to the right */
+  margin-right: 0;       /* Aligns it flush with the right edge */
+  display: block;
+}
+
+.hexagon .subtext {
+  font-size: 18px; /* Smaller font size for the subtext */
+  color: #ccc; /* Lighter color for differentiation */
+  opacity: 0; /* Make the subtext invisible initially */
+  transform: translate(0px, 50px); /* Start slightly below its original position */
+  transition: transform 0.7s ease, opacity 0.5s ease; /* Smooth fade-in and movement */
+}
+
+.hexagon:hover .subtext {
+  opacity: 1; /* Make the subtext visible on hover */
+  transform: translate(0px, -120px); /* Move the subtext upwards */
+}
+
+.leeruitkomsten {
+  padding: 50px 0; /* Add spacing around the section */
+  text-align: center; /* Center the section title */
+}
+
+.leeruitkomsten h2 {
+  font-size: 76px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 3910px; /* Adjust to move it vertically */
+  left: 46%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.leeruitkomsten p {
+  text-align: left;
+  font-size: 18px;
+  color: #A9A9A9;
+  line-height: 1.6;
+  max-width: 770px; /* Limit the width of the paragraph */
+  position: absolute;
+  left : 46%;
+  top: 3980px; /* Adjust to move it vertically */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.hexagon2 {
+  width: 312%;
+  height: 270%;
+  background: #383838;
+  opacity: 0;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2); /* Add shadows */
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center;
+  cursor: pointer; /* Make it clickable */
+}
+
+/* Positioning for each LO hexagon */
+.hexagon-lo1 {
+  position: absolute;
+  top: 4244px;
+  left: 265px;
+  width: 100px;
+  height: 100px;
+}
+
+.hexagon-lo2 {
+  position: absolute;
+  top: 4379px;
+  left: 500px;
+  width: 100px;
+  height: 100px;
+}
+
+.hexagon-lo3 {
+  position: absolute;
+  top: 4650px;
+  left: 500px;
+  width: 100px;
+  height: 100px;
+}
+
+.hexagon-lo4 {
+  position: absolute;
+  top: 4514px;
+  left: 735px;
+  width: 100px;
+  height: 100px;
+}
+
+.hexagon-lo5 {
+  position: absolute;
+  top: 4650px;
+  left: 970px;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+/* projecten layout */
+.project-background img {
+  width: 130%;
+  height: 100%;
+  margin-right: 20px;
+  margin-left: -500px;
+  margin-top: -50px;
+  position: relative; /* Ensure the image is positioned properly */
+  z-index: 1; /* Set a lower z-index for the image */
+}
+
+.project-background-fliped img {
+  width: 130%;
+  height: 100%;
+  margin-right: 20px;
+  margin-left: -7px;
+  margin-top: -427px;
+  position: relative; /* Ensure the image is positioned properly */
+  z-index: 1; /* Set a lower z-index for the image */
+}
+.branding {
+  font-size: 60px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 140px; /* Adjust to move it vertically */
+  left: 46%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.hexagon-branding1 p,.hexagon-branding2 p,.hexagon-branding3 p,.hexagon-branding4 p,.hexagon-branding5 p,.hexagon-branding6 p {
+  font-size: 50px;
+  color: #A9A9A9;
+  font-weight: bold;
+}
+
+.hexagon-branding1 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+
+.hexagon-branding2 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.fonts-image {
+  width: 80% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-branding3 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.logos-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-branding4 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.color-palet-image {
+  width: 70% !important;
+  max-width: 500px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-branding5 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.UX {
+  font-size: 60px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 157px; /* Adjust to move it vertically */
+  left: 37%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.hexagon-UX1 p,.hexagon-UX2 p,.hexagon-UX3 p,.hexagon-UX4 p,.hexagon-UX5 p,.hexagon-UX6 p {
+  font-size: 50px;
+  color: #A9A9A9;
+  font-weight: bold;
+}
+
+.hexagon-UX1 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.debriefing-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-UX2 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.onderzoek-image {
+  width: 100% !important;
+  max-width: 800px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-UX3 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-UX4 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+
+.quiz-creator-home-image {
+  width: 50% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 20px auto !important;
+}
+
+.hexagon-UX5 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.development {
+  font-size: 60px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 157px; /* Adjust to move it vertically */
+  left: 37%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.hexagon-dev1 p,.hexagon-dev2 p,.hexagon-dev3 p,.hexagon-dev4 p,.hexagon-dev5 p,.hexagon-dev6 p {
+  font-size: 50px;
+  color: #A9A9A9;
+  font-weight: bold;
+}
+
+.hexagon-dev1 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-dev2 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.card-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-dev3 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.design-picoo-image {
+  width: 80% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-dev4 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.snippits-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-dev5 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.git-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-dev6 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.projectX {
+  font-size: 100px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 107px; /* Adjust to move it vertically */
+  left: 45%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+
+
+.hexagon-projectx1 p,.hexagon-projectx2 p,.hexagon-projectx3 p,.hexagon-projectx4 p,.hexagon-projectx5 p,.hexagon-projectx6 p,.hexagon-projectx7 p,.hexagon-projectx8 p,.hexagon-projectx9 p,.hexagon-projectx10 p,.hexagon-projectx11 p,.hexagon-projectx12 p {
+  font-size: 50px;
+  color: #A9A9A9;
+  font-weight: bold;
+}
+
+.hexagon-projectx1 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx2 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx3 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx4 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.design-image {
+  width: 130% !important;
+  max-width: 900px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-projectx5 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx6 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.morphs-image {
+  width: 90% !important;
+  max-width: 1000px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-projectx7 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx8 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-projectx9 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.keyboard-controls-image {
+  width: 100% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-projectx10 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.automorph-image {
+  width: 100% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-projectx11 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.click-handler-image {
+  width: 90% !important;
+  max-width: 550px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 20px auto !important;
+}
+
+.hexagon-projectx12 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+
+.Lo1 {
+  font-size: 60px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 130px; /* Adjust to move it vertically */
+  left: 39%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 50%; /* Prevent overflow */
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+
+.Lo2 {
+  font-size: 55px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 130px; /* Adjust to move it vertically */
+  left: 36%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 50%;
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.hexagon-Lo1 p,.hexagon-Lo2 p,.hexagon-Lo3 p,.hexagon-Lo4 p,.hexagon-Lo5 p,.hexagon-Lo6 p {
+  font-size: 50px;
+  color: #A9A9A9;
+  font-weight: bold;
+}
+
+.hexagon-Lo1 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-Lo2 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.navbar-effect-image {
+  width: 110% !important;
+  max-width: 800px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-Lo3 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.hexagon-code-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-Lo4 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.text-spacing-image {
+  width: 100% !important;
+  max-width: 800px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.Lo3 {
+  font-size: 55px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 130px; /* Adjust to move it vertically */
+  left: 40%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 50%;
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.logo-designs-image {
+  width: 70% !important;
+  max-width: 550px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.posters-image {
+  width: 100% !important;
+  max-width: 900px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.image-associations-image {
+  width: 100% !important;
+  max-width: 700px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0px auto !important;
+}
+
+.image-associations2-image {
+  width: 90% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.hexagon-Lo5 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+.app-design-image {
+  width: 800% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 50px auto !important;
+}
+
+.hexagon-Lo6 p.subtext {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Optional: center the text inside */
+  font-weight: normal;
+  text-align: left;
+}
+
+
+.Lo4 {
+  font-size: 55px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 130px; /* Adjust to move it vertically */
+  left: 36%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 50%;
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+.feedback-image {
+  width: 80% !important;
+  max-width: 520px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 30px auto !important;
+}
+
+.Lo5 {
+  font-size: 55px;
+  font-family: 'DaggerSquare', sans-serif;
+  color: #1a1a1a;
+  position: absolute; /* Allow precise positioning */
+  top: 130px; /* Adjust to move it vertically */
+  left: 41%; /* Center horizontally */
+  margin: 0; /* Remove default margins */
+  z-index: 10; /* Ensure it appears above other elements */
+  letter-spacing: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 50%;
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #c00 30%, #1a1a1a 70%);
+  background-size: 10% 10%;
+  background-position: 40% 60%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:radial-loop 3s linear infinite;
+  color: transparent;
+  background:
+    radial-gradient(circle at 25% 50%, #c00 10%, #000000 20%, transparent 40%),
+    radial-gradient(circle at 75% 50%, #c00 10%, #000000 20%, transparent 40%),
+    linear-gradient(to right, #1a1a1a 0%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: double-loop 6s linear infinite;
+}
+
+/* Shared hexagon styles */
+.hexagon-shared {
+  position: absolute;
+  background: #4c4c4c;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 6px 6px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #A9A9A9;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  z-index: 10;
+}
+
+/* Branding hexagons */
+.hexagon-branding1 { top: 500px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-branding2 { top: 1970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-branding3 { top: 3330px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-branding4 { top: 5010px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-branding5 { top: 6610px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-branding6 { top: 7940px; left: 50px; width: 1400px; height: 1250px; }
+
+/* UX hexagons */
+.hexagon-UX1 { top: 500px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-UX2 { top: 1970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-UX3 { top: 3330px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-UX4 { top: 5010px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-UX5 { top: 6610px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-UX6 { top: 7940px; left: 50px; width: 1400px; height: 1250px; }
+
+/* Development hexagons */
+.hexagon-dev1 { top: 500px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-dev2 { top: 1970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-dev3 { top: 3330px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-dev4 { top: 5010px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-dev5 { top: 6610px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-dev6 { top: 7940px; left: 50px; width: 1400px; height: 1250px; }
+
+/* ProjectX hexagons */
+.hexagon-projectx1 { top: 500px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-projectx2 { top: 1970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-projectx3 { top: 3330px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-projectx4 { top: 5010px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-projectx5 { top: 6610px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-projectx6 { top: 7940px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-projectx7 { top: 9690px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-projectx8 { top: 11290px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-projectx9 { top: 12650px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-projectx10 { top: 14430px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-projectx11 { top: 15970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-projectx12 { top: 17350px; left: 50px; width: 1400px; height: 1250px; }
+
+/* Lo hexagons universal */
+.hexagon-Lo1 { top: 500px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-Lo2 { top: 1970px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-Lo3 { top: 3330px; left: 50px; width: 1400px; height: 1250px; }
+.hexagon-Lo4 { top: 5010px; left: 80px; width: 1400px; height: 1250px; }
+.hexagon-Lo5 { top: 6610px; left: 95px; width: 1300px; height: 1100px; }
+.hexagon-Lo6 { top: 7940px; left: 50px; width: 1400px; height: 1250px; }
+
+
+

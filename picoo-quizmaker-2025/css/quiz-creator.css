@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* General Styles */
+body {
+    font-family: Quicksand, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+/* ALLES WAT MET DE HEADER TE MAKEN HEEFT */
+/* ALLES WAT MET DE HEADER TE MAKEN HEEFT */
+/* ALLES WAT MET DE HEADER TE MAKEN HEEFT */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    height: 76px;
+    padding: 0 20px;
+    padding-right: 150px;
+    box-shadow: 0px 0px 20px rgba(12, 4, 44, 0.2);
+    z-index: 3;
+    position: relative; /* Makes it part of the stacking context */
+}
+
+.icon {
+    width: 23px;
+    height: auto;
+}
+.arrow-back {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    flex: 1;
+}
+
+.quiz-title-section {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    position: relative;
+}
+
+.quiz-input {
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+    color: #292d78;
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: 12px;
+    margin-left: 5px;
+    line-height: 1;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #292d78;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 15px;
+}
+
+.nav-list li a:hover {
+    color: rgb(30, 33, 85);
+    font-weight: 500;
+    border-bottom: 2px solid #00aeef;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+.save-button {
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+    background-color: #00AEEF;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #1ebef8;
+}
+
+.publish-button {
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+    background-color: #84bf41;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.publish-button:hover {
+    background-color: #94ca57;
+}
+
+/* HIER KOMT DE MAIN */
+/* HIER KOMT DE MAIN */
+/* HIER KOMT DE MAIN */
+.quiz-creator-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+}
+.quiz-creator-box {
+    background-color:#2E3192;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    width: 1298px;
+    height: 207px;
+}
+
+.centered-div {
+    display: flex;
+    justify-content: center; /* Center the div itself */
+    width: 100%; /* Make it full width */
+}
+  
+.centered-div h2 {
+    font-family: "Quicksand", sans-serif !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    color: #ffffff !important;
+    font-size: 32px !important;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    margin-right: 10%;
+    text-align: left;
+    width: 80%; /* Adjust this to control the width of the h2 */
+}
+.left-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    z-index: 2;
+}
+.left-box {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 165px;
+    position: absolute;
+    top: 0; /* Adjust this for vertical positioning */
+    left: 0; /* This ensures it is on the left side */
+    z-index: 2;
+}
+
+.right-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    z-index: 2;
+}
+.right-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 240px;
+    box-shadow: -5px 0px 20px rgba(12, 4, 44, 0.18);
+    position: absolute;
+    top: 0; /* Adjust this for vertical positioning */
+    right: 0; /* This ensures it is on the left side */
+    z-index: 2;
+    flex-direction: column;
+}
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 120px;
+}
+  
+.setting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns labels to the left */
+    gap: 5px;
+}
+  
+.icon-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    text-wrap: nowrap;
+    color: #2E3192;
+    width: 150px; /* Fixed width ensures consistent alignment */
+    margin-bottom: 5px;
+}
+  
+select {
+    padding: 6px 12px;
+    border: 1px solid #2E3192;
+    width: 180px; /* You can set this to 100% if you prefer */
+    border-radius: 8px;
+    font-family: "Quicksand", sans-serif;
+    color: #2E3192;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    gap: 0px;
+    margin-top: auto; /* <- this is the key */
+    padding-bottom: 15px;
+}
+  
+.delete-button {
+    background: none;
+    border: none;
+    color: #2E3192;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+  
+.delete-button:hover {
+    color: #1A1A7F;
+}
+  
+.duplicate-button {
+    background: none;
+    border: 2px solid #2E3192;
+    color: #2E3192;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+.duplicate-button:hover {
+    background-color: #2E3192;
+    color: #ffffff;
+}
+
+/* HIER IS VRAGEN IN HET MIDDEN */
+/* HIER IS VRAGEN IN HET MIDDEN */
+/* HIER IS VRAGEN IN HET MIDDEN */
+.quiz-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    font-family: Quicksand, sans-serif;
+}
+
+.quiz-creator-header {
+    background-color: #2E3192;
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+}
+
+.quiz-creator-header h1 {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.quiz-question-section h2 {
+    font-size: 22px;
+    color: #292d78;
+    margin-bottom: 10px;
+}
+
+.question-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #292d78;
+
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+}
+
+.answers-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    column-gap: 50px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.answer-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.answer-checkbox {
+    appearance: none; /* Remove default styles */
+    width: 25px;
+    height: 25px;
+    background-image: url("../icons/check-gray.svg");
+    cursor: pointer;
+    scale: 0.8;
+    transition: background-color 0.3s;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Checked state styles */
+.answer-checkbox:checked {
+    background-image: url("../icons/check-green.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.confirm-button {
+    background-color: #84bf41;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+}
+
+.settings-panel {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.settings-panel label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2E3192;
+}
+
+.settings-panel select {
+    padding: 5px 10px;
+    border: 1px solid #2e9244;
+    border-radius: 6px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #ffffff;
+    width: 165px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 10px;
+    padding-top: 100px;
+    box-shadow: 5px 0px 20px rgba(12, 4, 44, 0.18);
+}
+
+.sidebar h2 {
+    color: #292d78;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.question-item {
+  background-color: #e0e0ff;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2E3192;
+}
+
+.question-item.active {
+  background-color: #2E3192;  /* Color when active */
+  color: #ffffff;  /* Text color when active */
+}
+
+/* Add Question Button */
+.sidebar button {
+    background-color: #00AEEF;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #1ebef8;
+}
+
+#question-display {
+    background-color: rgb(240, 240, 245);
+    padding: 20px;
+    border-radius: 12px;
+    position: fixed;  /* Fixes it relative to the viewport */
+    top: 65%;  /* Centers vertically */
+    left: 50%;  /* Centers horizontally */
+    transform: translate(-50%, -50%);  /* Offsets the element by its own width/height */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;  /* Ensure it's above other content */
+    color: #292d78;
+    padding-right: 100px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: Quicksand, sans-serif;
+    color: #292d78;
+    font-weight: 700;
+}
+
+/* Answer Section */
+.answers-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+    color: #292d78;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #292d78;
+}
+
+.answer input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #292d78;
+    font-weight: 600;
+}
+
+.popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-weight: 700;
+        color: #292d78;
+}
+
+.popup {
+        background: white;
+        padding: 50px 90px;
+        border-radius: 10px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+
+

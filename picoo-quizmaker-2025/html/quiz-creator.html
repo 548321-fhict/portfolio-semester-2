@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz creator</title>
+    <link rel="stylesheet" href="../css/quiz-creator.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left-section">
+        <div class="arrow-back">
+          <img src="../icons/arrow-left.svg" alt="Back" class="arrow-back" />
+        </div>
+        <div class="logo">
+          <a href="../index.html"
+            ><img src="../images/logo-picoo.png" alt="Picoo Logo" class="logo"
+          /></a>
+        </div>
+      </div>
+      <div class="quiz-title-section">
+        <input
+          type="text"
+          class="quiz-input"
+          placeholder="Enter your quiz title here"
+          maxlength="26"
+        />
+        <div class="error-message">Maximum of 26 characters allowed.</div>
+      </div>
+
+      <div class="header-buttons">
+        <button class="save-button">Save</button>
+        <button class="publish-button">Publish</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="popup-overlay" class="popup-overlay" style="display: none">
+        <div class="popup">
+          <p class="popup-text">Quiz Saved!</p>
+        </div>
+      </div>
+      <div class="quiz-creator-box-container">
+        <div class="quiz-creator-box">
+          <div class="centered-div">
+            <h2>Quiz creator</h2>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-container">
+        <div id="question-display">
+          <!-- Active question will be displayed here -->
+        </div>
+        <!-- <div class="quiz-question-section">
+          <h2>Question 1</h2>
+          <input
+            type="text"
+            class="question-input"
+            placeholder="Enter your question here"
+          />
+
+          <div class="answers-section">
+            <div class="answer">
+              <input type="checkbox" class="answer-checkbox" />
+              <input
+                type="text"
+                placeholder="Answer option"
+                class="answer-input"
+              />
+            </div>
+            <div class="answer">
+              <input type="checkbox" class="answer-checkbox" />
+              <input
+                type="text"
+                placeholder="Answer option"
+                class="answer-input"
+              />
+            </div>
+            <div class="answer">
+              <input type="checkbox" class="answer-checkbox" />
+              <input
+                type="text"
+                placeholder="Answer option"
+                class="answer-input"
+              />
+            </div>
+            <div class="answer">
+              <input type="checkbox" class="answer-checkbox" />
+              <input
+                type="text"
+                placeholder="Answer option"
+                class="answer-input"
+              />
+            </div>
+          </div>
+
+          <button class="confirm-button">Confirm correct answers</button>
+        </div> -->
+      </div>
+
+      <div class="left-box-container">
+        <div class="left-box">
+          <div class="sidebar">
+            <h2>Questions</h2>
+            <div class="question-list" id="question-list">
+              <!-- Dynamic Question Items Here -->
+            </div>
+            <button class="add-question" onclick="addQuestion()">
+              + Add Question
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-box-container">
+        <div class="right-box">
+          <div class="settings-section">
+            <div class="setting">
+              <div class="icon-label">
+                <img src="../icons/clock.svg" alt="Clock" class="icon" />
+                <label>Time limit</label>
+              </div>
+              <select>
+                <option>30 seconds</option>
+                <option>45 seconds</option>
+                <option>60 seconds</option>
+              </select>
+            </div>
+
+            <div class="setting">
+              <div class="icon-label">
+                <img src="../icons/list.svg" alt="List" class="icon" />
+                <label>Answer options</label>
+              </div>
+              <select>
+                <option>Single select</option>
+                <option>Multiple select</option>
+              </select>
+            </div>
+
+            <div class="setting">
+              <div class="icon-label">
+                <img src="../icons/question.svg" alt="Question" class="icon" />
+                <label>Answers per question</label>
+              </div>
+              <select>
+                <option>4 answers</option>
+                <option>3 answers</option>
+                <option>2 answers</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="save-button bottom-save-button">Save</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <!-- JAVA SCRIPT -->
+  <!-- JAVA SCRIPT -->
+  <!-- JAVA SCRIPT -->
+  <!-- JAVA SCRIPT -->
+
+  <script src="../js/quiz-creator-checkbox.js"></script>
+
+  <script src="../js/quiz-creator-database.js"></script>
+
+  <script src="../js/quiz-creator-popup.js"></script>
+
+  <script src="../js/quiz-creator-publish-popup.js"></script>
+
+  <script src="../js/arrow-back.js"></script>
+</html>
