@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Project x</title>
+</head>
+<body>
+    <div id="instructions-overlay">
+      <div class="arrow-group left">
+        <div class="arrow-text">click here to go to look<br>through the images</div>
+        <img src="images/arrow-left.png" class="arrow-img arrow-left-img" alt="arrow left">
+      </div>
+      <div class="arrow-group center">
+        <div class="arrow-text">Click the middle<br>image to continue</div>
+        <img src="images/arrow-down.png" class="arrow-img arrow-down-img" alt="arrow down">
+      </div>
+      <div class="arrow-group right">
+        <div class="arrow-text">click here to go to look<br>through the images</div>
+        <img src="images/arrow-left.png" class="arrow-img arrow-right-img" alt="arrow right">
+      </div>
+    </div>
+    <div id="auto-morph-indicator">
+       Auto scroll on
+    </div>
+    <div id="threejs-container" style="width:100vw; height:100vh; position:fixed; top:0; left:0;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
