@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finn Schoenmakers Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="nav-bar">
+    <a href="index.html#projecten">Projecten</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="index.html#leeruitkomsten">Leeruitkomsten</a>
+  </header>
+
+  <section class="project-background">
+  <img src="images/project-background.svg" class="main-image" >
+  <section class="project-background-fliped">
+  <img src="images/project-background-fliped.svg" class="main-image" >
+
+  <section class="Lo2">
+    <h1>LO2: Development and version control </h1>
+  </section>
+
+
+  <section class="project hexagons">
+
+<div class="hexagon-shared hexagon-Lo1">
+  <div class="hexagon-Lo1">
+    <p>Development portfolio</p>
+    <p class="subtext">Het ging eigenlijk best goed met het maken van mijn portfolio website, maar er was wel iets dat me vrij snel opviel toen ik begon met coderen. Ik had namelijk het idee om hexagons te gebruiken als vorm om tekst op te zetten, maar in de praktijk bleek dat toch een stuk minder handig dan ik had gedacht. Het is veel ingewikkelder dan werken met een rechthoekige vorm, vooral als je meerdere afbeeldingen en stukken tekst dicht bij elkaar wilt plaatsen.
+    <br>
+    <br>
+    Met een hexagon is het lastig om structuur en consistentie aan te brengen, vooral als je de website responsief wilt maken. De positionering raakte al snel scheef of onlogisch, en dat maakte het bouwen onnodig complex. Daarom weet ik nu al dat ik bij mijn volgende portfolio een design ga kiezen dat praktischer en overzichtelijker is – een ontwerp dat het makkelijker maakt om tekst en afbeeldingen netjes te positioneren.
+    <br>
+    <br>
+    Hieronder heb ik een aantal code-snippets toegevoegd van stukken code die ik zelf interessant vond of waar ik iets van geleerd heb.
+</p>
+  </div>
+</div>
+
+<div class="hexagon-shared hexagon-Lo2">
+  <div class="hexagon-Lo2">
+    <p>Nav-bar fucties</p>
+    <p class="subtext">Een van de dingen waar ik best trots op ben, is de navbar. Daar heb ik een effect toegevoegd waarbij het lijkt alsof een rode kleur je muis volgt. In de JavaScript houd ik de positie van de muis bij, en in de CSS heb ik gezorgd voor een visueel effect dat actief reageert als je over de navbar beweegt.
+    <br>
+    <br>
+    Het resultaat is dat er een soort lichtcirkel of spotlight met een rode gloed en een gradient naar zwart meebeweegt met je cursor. Dit zie je het beste als je over de tekst in de navbar beweegt – dan lijkt het alsof de kleur je muis echt volgt. Als je dit effect op een lege pagina zonder tekst zou gebruiken, zie je pas dat het eigenlijk gewoon een meebewegende cirkel is. Toch vond ik het een leuk experiment, en ik ben tevreden met hoe het eruitziet.
+    <br>
+    <br>
+    Daarnaast heb ik ervoor gezorgd dat wanneer je op een item in de navbar klikt, de pagina automatisch naar beneden scrolt naar het juiste onderdeel. Dit heb ik gedaan omdat mijn portfolio geen aparte pagina's heeft, maar alles zich op één lange homepagina afspeelt. Door dit scroll-effect voelt de navigatie toch vloeiend en duidelijk aan.
+    <img src="images/navbar-effect.png" class="navbar-effect-image">
+  </p>
+  </div>
+</div>
+
+<div class="hexagon-shared hexagon-Lo3">
+  <div class="hexagon-Lo3">
+    <p>Hexagons</p>
+    <p class="subtext">Voor de positie van de hexagons heb ik gebruikgemaakt van absolute positioning, waarbij ik per hexagon handmatig de positie heb ingesteld. Dit werkte op zich wel, maar het was veel werk en niet zo flexibel.
+    <br>
+    <br>
+    Als ik dit opnieuw zou moeten doen, zou ik ervoor kiezen om hexagons te maken die allemaal dezelfde grootte hebben, of in ieder geval een gelijk ritme in grootte en opbouw. Op die manier kun je ze namelijk makkelijker in een container zetten en met goede marges en padding werken om ze netjes uit te lijnen. Dat zou het niet alleen veel overzichtelijker maken, maar ook makkelijker om dingen aan te passen als er later nog iets niet klopt.
+    <br>
+    <br>
+    Zo voorkom je ook dat je alles handmatig moet positioneren met top, left en transform, wat al snel chaotisch wordt – vooral bij grotere schermen of als je het responsief wil maken.
+    <img src="images/hexagon-code.png" class="hexagon-code-image">
+</p>
+  </div>
+</div>
+
+<div class="hexagon-shared hexagon-Lo4">
+  <div class="hexagon-Lo4">
+    <p>Text spacing</p>
+    <p class="subtext">Ik heb ook nog van een klein detail een screenshot gemaakt, namelijk over het gebruik van de <br>-tag in HTML. Hiermee kun je een soort enter maken in je tekst, waardoor je makkelijk witruimte kunt creëren tussen alinea’s of zinnen.
+    <br>
+    <br>
+    Eerst probeerde ik gewoon lege regels te laten in de HTML-code, maar dat had geen effect op de weergave van de tekst in de browser. Toen ontdekte ik dat je met <br> wel die ruimte kunt forceren. Dit helpt enorm bij de leesbaarheid van je tekst, omdat je zo duidelijker onderscheid kunt maken tussen verschillende stukken inhoud.
+    <br>
+    <br>
+    Het lijkt iets kleins, maar het heeft een groot effect op hoe netjes en overzichtelijk je content eruitziet.
+    <img src="images/text-spacing.png" class="text-spacing-image">
+</p>
+  </div>
+</div>
+
+<div class="hexagon-shared hexagon-Lo5">
+  <div class="hexagon-Lo5">
+    <p>Development</p>
+    <p class="subtext">Learn about our code</p>
+  </div>
+</div>
+
+<div class="hexagon-shared hexagon-Lo6">
+  <div class="hexagon-Lo6">
+    <p>Marketing</p>
+    <p class="subtext">See our strategies</p>
+  </div>
+</div>
+
+
+</body>
+</html>
